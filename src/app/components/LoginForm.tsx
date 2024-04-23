@@ -57,7 +57,7 @@ const LoginForm: React.FC = () => {
           Login
         </button>
         <div className="flex justify-center">
-          <p className="text-gray-400">Don't have an account?</p>
+          <p className="text-gray-400">Don&apos;t have an account?</p>
           <a className="text-black-400 font-bold ml-2">Register</a>
         </div>
       </form>
