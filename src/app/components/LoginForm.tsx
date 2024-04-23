@@ -1,47 +1,67 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(`Email: ${email}, Password: ${password}`);
+    console.log(`Email ${email}, Password: ${password}`);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+    <div className="flex justify-center shadow p-4">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full flex flex-col space-y-4"
+      >
         <h2 className="text-lg">Welcome!</h2>
         <h2 className="text-lg font-semibold">Sign in</h2>
         <p>Please enter your credentials to log in.</p>
+        <label>Email</label>
         <input
-            type="text"
-            placeholder="Enter your user email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded"
+          type="text"
+          placeholder="Enter your user email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="px-4 py-2 border border-gray-300 rounded"
         />
-        <input
-            type="password"
+        <label>Password</label>
+        <div className="relative">
+          <input
+            type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded"
-        />
-        <div className="flex items-center">
+            className="px-4 py-2 border border-gray-300 rounded w-full pr-12" 
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute inset-y-0 right-2 flex items-center"
+          >
+            {showPassword ? "Hide" : "Show"}
+          </button>
+        </div>
+        <div className="flex justify-between">
+          <div className="flex items-center">
             <input type="checkbox" />
             <label className="ml-2">Remember me</label>
+          </div>
+          <a className="text-gray-400">Forgot password?</a>
         </div>
-        <a className="text-gray-400">Forgot password?</a>
-        <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">
-            Login
+        <button type="submit" className="px-4 py-2 bg-black text-white rounded">
+          Login
         </button>
-        <div className="">
-            <p className="text-gray-400">Don't have an account?</p><a className="text-black-400 font-bold">Register</a>
+        <div className="flex justify-center">
+          <p className="text-gray-400">Don't have an account?</p>
+          <a className="text-black-400 font-bold ml-2">Register</a>
         </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
