@@ -1,15 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
+import axios from "axios";
+
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(`Email ${email}, Password: ${password}`);
+    try {
+      const response = await axios.post('http://18.218.100.42:8080/api/login', { email, password });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
