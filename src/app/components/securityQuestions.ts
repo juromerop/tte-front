@@ -1,0 +1,22 @@
+export const securityQuestions = [
+    "What was the name of your first pet?",
+    "What is your hometown?",
+    "What is your favorite book?",
+    "What is the name of your childhood best friend?",
+    "What is your favorite movie?",
+    "What was your first job?",
+    "What is your mother's maiden name?",
+    "What was the name of your elementary school?",
+    "What was your childhood nickname?",
+    "What is your favorite food?",
+    "What was the make and model of your first car?",
+    "Who was your favorite teacher in high school?",
+    "What is your father's middle name?",
+    "What is your favorite sport?",
+    "What is the name of the street where you grew up?",
+    "What is your favorite color?",
+    "What was the name of your first stuffed animal?",
+    "What is the name of your favorite childhood friend?",
+    "What was your dream job as a child?",
+    "What is your favorite musical band?"
+  ];
