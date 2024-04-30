@@ -13,10 +13,26 @@ const LoginForm: React.FC = () => {
     e.preventDefault();
     console.log(`Email ${email}, Password: ${password}`);
     try {
-      const response = await axios.post('http://18.218.100.42:8080/api/login', { email, password });
+      const response = await axios.post('http://localhost:8080/api/login/', { email, password });
       console.log(response.data);
     } catch (error) {
-      console.error(error);
+      if (axios.isAxiosError(error)) {
+        if (error.response) {
+          // La solicitud se hizo y el servidor respondió con un estado fuera del rango de 2xx
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // La solicitud se hizo pero no se recibió ninguna respuesta
+          console.log(error.request);
+        } else {
+          // Algo sucedió en la configuración de la solicitud que provocó un error
+          console.log('Error', error.message);
+        }
+      } else {
+        // Aquí puedes manejar otros tipos de errores si es necesario
+        console.log('Error', error);
+      }
     }
   };
 
