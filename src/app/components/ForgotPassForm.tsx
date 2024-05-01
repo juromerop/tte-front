@@ -56,9 +56,9 @@ const ForgotPassForm: React.FC = () => {
         </button>
         <div className="flex justify-center font-light text-xs pt-6">
           <p className="text-gray-400">Don&apos;t have an account?</p>
-          <a className="text-black-400 font-bold ml-2">Register</a>
+          <a href="/auth/register" className="text-black-400 font-bold ml-2">Register</a>
         </div>
-        <a className="flex justify-center text-black-400 font-bold ml-2 text-xs">Back to login</a>
+        <a href="/auth/login" className="flex justify-center text-black-400 font-bold ml-2 text-xs">Back to login</a>
       </form>
     </div>
   );

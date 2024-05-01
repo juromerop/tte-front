@@ -38,6 +38,16 @@ export default function Home() {
         <p className="text-lg text-center text-gray-700 dark:text-gray-300">
           We are better than Amazon
         </p>
+        <a href="/auth/login">
+          <button className="px-4 py-2 bg-black text-white rounded text-sm">
+            GO TO LOGIN
+          </button>
+        </a>
+        <a href="/feed">
+          <button className="px-4 py-2 bg-black text-white rounded text-sm">
+            FEED
+          </button>
+        </a>
       </div>
     </main>
   );
