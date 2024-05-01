@@ -91,16 +91,13 @@ const RegisterForm: React.FC = () => {
           onChange={(e) => setQuestionAnswer(e.target.value)}
           className="px-4 py-1 border border-gray-300 rounded text-sm"
         />
-        <button
-          type="submit"
-          className="px-4 py-2 bg-black text-white rounded text-sm"
-        >
-          Sign up
-        </button>
+          <button type="submit" className="px-4 py-2 bg-black text-white rounded text-sm" onSubmit={handleSubmit}>
+            Sign up
+          </button>
         <div className="flex justify-center font-light text-xs">
           <p className="text-gray-400">Already have an account?</p>
           {/* <Link href="/auth/login"> */}
-            <a className="text-black-400 font-bold ml-2">Login</a>
+            <a href="/auth/login" className="text-black-400 font-bold ml-2">Login</a>
           {/* </Link> */}
         </div>
       </form>

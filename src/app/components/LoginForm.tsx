@@ -12,12 +12,12 @@ const LoginForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(`Email ${email}, Password: ${password}`);
-    try {
-      const response = await axios.post('http://18.218.100.42:8080/api/login', { email, password });
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+    // try {
+    //   const response = await axios.post('http://18.218.100.42:8080/api/login', { email, password });
+    //   console.log(response.data);
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   return (
@@ -59,14 +59,16 @@ const LoginForm: React.FC = () => {
             <input type="checkbox" />
             <label className="ml-2 font-light text-xs">Remember me</label>
           </div>
-          <a className="text-gray-400 font-light text-xs">Forgot password?</a>
+          <a href="/auth/forgot-pass" className="text-gray-400 font-light text-xs">Forgot password?</a>
         </div>
-        <button type="submit" className="px-4 py-2 bg-black text-white rounded text-sm">
-          Login
-        </button>
+        <a href="/feed"  className=" px-4 py-2 bg-black text-white rounded text-sm flex justify-center">
+          <button type="submit" className="px-4 py-2 bg-black text-white rounded text-sm">
+            Login
+          </button>
+        </a>
         <div className="flex justify-center font-light text-xs pt-6">
           <p className="text-gray-400">Don&apos;t have an account?</p>
-          <a className="text-black-400 font-bold ml-2">Register</a>
+          <a href="/auth/register" className="text-black-400 font-bold ml-2">Register</a>
         </div>
       </form>
     </div>

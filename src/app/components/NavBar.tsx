@@ -13,7 +13,7 @@ const NavBar: React.FC = () => {
                 <div className='font-light'>Shop List</div>
                 <div className='font-light'>Wishlist</div>
                 <div className='font-light'><input type="text" className="bg-gray-200" /></div>
-                <div className='font-light'>Login</div>
+                <div className='font-light'><a href='/auth/login'>Login</a></div>
             </nav>
         </div>
     );
